@@ -1,8 +1,10 @@
 #define BOARD_TOP_MARGIN 0
-#define BOARD_RIGHT_MARGIN 0
+#define BOARD_RIGHT_MARGIN 1
 
 #define BOARD_SIZE_X 10
 #define BOARD_SIZE_Y 20
+
+#define BLOCK_START 4
 
 byte t_board[BOARD_SIZE_Y][BOARD_SIZE_X] = {};
 
@@ -44,6 +46,7 @@ void flickerRow(byte row)
      ppu_wait_frame();
      vram_adr(NTADR_A(BOARD_RIGHT_MARGIN + 1, BOARD_TOP_MARGIN + 1 + row));
      vram_write(t_board[row], BOARD_SIZE_X);
+     vram_adr(NTADR_A(0,0));
      
      ppu_wait_frame();
      ppu_wait_frame();
@@ -52,6 +55,7 @@ void flickerRow(byte row)
      ppu_wait_frame();
      vram_adr(NTADR_A(BOARD_RIGHT_MARGIN + 1, BOARD_TOP_MARGIN + 1 + row));
      vram_write("                           ", BOARD_SIZE_X);
+     vram_adr(NTADR_A(0,0));
    }
   
   for(j = 0; j < BOARD_SIZE_X; ++j)

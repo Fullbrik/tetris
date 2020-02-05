@@ -60,6 +60,25 @@ void setup_graphics() {
 
 void game(void)
 {
+  ppu_off();
+  for(i = 0; i < BOARD_SIZE_Y; i++)
+  {
+    vram_adr(NTADR_A(BOARD_RIGHT_MARGIN, 1 + i));
+    vram_put(5);
+    vram_adr(NTADR_A(BOARD_RIGHT_MARGIN + BOARD_SIZE_X + 1, 1 + i));
+    vram_put(5);
+  }
+  
+  vram_adr(NTADR_A(BOARD_RIGHT_MARGIN, BOARD_SIZE_Y + 1));
+  
+  for(i = 0; i < BOARD_SIZE_X + 2; i++)
+  {
+    vram_put(5);
+  }
+  
+  vram_adr(NTADR_A(0,0));
+  ppu_on_all();
+  
   start();
   
   // infinite loop

@@ -1,20 +1,112 @@
-#define SHAPES_COUNT 1
+#define SHAPES_COUNT 7
 
-const byte shapes[SHAPES_COUNT][3][3] =
+
+const byte shapes[SHAPES_COUNT * 2][3][3] =
 {
+/*{
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0}
+  },*/
+  //Rotation 1
   {
     {0, 1, 0},
     {0, 1, 0},
     {0, 1, 0}
-  }
+  },
+  {
+    {0, 0, 0},
+    {1, 1, 1},
+    {0, 1, 0}
+  },
+  {
+    {1, 1, 0},
+    {0, 1, 0},
+    {0, 1, 0}
+  },
+  {
+    {0, 1, 1},
+    {0, 1, 0},
+    {0, 1, 0}
+  },
+  {
+    {0, 0, 0},
+    {1, 1, 0},
+    {1, 1, 0}
+  },
+  {
+    {1, 0, 0},
+    {1, 1, 0},
+    {0, 1, 0}
+  },
+  {
+    {0, 0, 1},
+    {0, 1, 1},
+    {0, 1, 0}
+  },
+  
+  //Rotation 2
+  {
+    {0, 0, 0},
+    {1, 1, 1},
+    {0, 0, 0}
+  },
+  {
+    {0, 1, 0},
+    {0, 1, 1},
+    {0, 1, 0}
+  },
+  {
+    {0, 0, 0},
+    {1, 1, 1},
+    {0, 1, 0}
+  },
+  {
+    {1, 0, 0},
+    {1, 1, 1},
+    {0, 0, 0}
+  },
+  {
+    {0, 0, 0},
+    {1, 1, 0},
+    {1, 1, 0}
+  },
+  {
+    {0, 0, 0},
+    {0, 1, 1},
+    {1, 1, 0}
+  },
+  {
+    {0, 0, 0},
+    {1, 1, 0},
+    {0, 1, 1}
+  },
 };
 
 #define SHAPE_MARGIN_LEFT(shape)  shape_margins[shape][0]
 #define SHAPE_MARGIN_RIGHT(shape) shape_margins[shape][1]
 #define SHAPE_MARGIN_BELOW(shape) shape_margins[shape][1]
-const byte shape_margins[SHAPES_COUNT][3] =
+const byte shape_margins[SHAPES_COUNT * 2][3] =
 {
-  {1,1,3}
+//{0,2,2},
+  
+  //Rotation1
+  {1,1,2},
+  {1,2,2},
+  {0,1,2},
+  {1,2,2},
+  {0,1,2},
+  {0,1,2},
+  {1,2,2},
+  
+  //Rotation2
+  {0,2,1},//
+  {0,2,2},//
+  {0,2,2},//
+  {0,2,1},//
+  {0,1,2},//
+  {0,2,2},//
+  {0,2,2},//
 };
 
 void draw_shape(byte shape, byte x, byte y)
