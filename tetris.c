@@ -23,10 +23,13 @@
 //#link "vrambuf.c"
 
 
-byte i, j;
+byte i, j, k;
 
 
 #include "t_board.h"
+
+#include "shapes.h"
+
 
 #include "game.h"
 
