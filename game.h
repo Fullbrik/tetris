@@ -3,7 +3,7 @@ byte pad;
 byte score;
 
 byte fall_count_down;
-#define FALL_FRAMES 5
+byte FALL_FRAMES = 30;
 
 byte currShape;
 sbyte shapeX = 5;
@@ -21,6 +21,7 @@ void move_down(void)
   else
   {
     place_shape(currShape, shapeX, shapeY);
+    --FALL_FRAMES;
     
     shapeY = 0;
   }
@@ -72,6 +73,6 @@ void update(void)
     move_down();
   }
   
-  checkForBoardLines();
+  checkForBoardLines(&score);
 }
 

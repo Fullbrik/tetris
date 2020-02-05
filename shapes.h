@@ -3,9 +3,9 @@
 const byte shapes[SHAPES_COUNT][3][3] =
 {
   {
-    {0, 0, 1},
-    {0, 1, 1},
-    {0, 1, 1}
+    {0, 1, 0},
+    {0, 1, 0},
+    {0, 1, 0}
   }
 };
 
@@ -14,7 +14,7 @@ const byte shapes[SHAPES_COUNT][3][3] =
 #define SHAPE_MARGIN_BELOW(shape) shape_margins[shape][1]
 const byte shape_margins[SHAPES_COUNT][3] =
 {
-  {1,2,3}
+  {1,1,3}
 };
 
 void draw_shape(byte shape, byte x, byte y)

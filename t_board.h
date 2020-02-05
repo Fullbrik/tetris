@@ -71,7 +71,7 @@ void flickerRow(byte row)
   drawBoardToPPU();
 }
 
-void checkForBoardLines()
+void checkForBoardLines(byte* score)
 {
   for(i = BOARD_SIZE_Y - 1; i != 255; --i)
   {
@@ -86,6 +86,7 @@ void checkForBoardLines()
     if(placedBlocks == BOARD_SIZE_X)
     {
       flickerRow(i);
+      ++*score;
       --i;
     }
   }
